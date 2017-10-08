@@ -1,0 +1,102 @@
+2017-10-07 11:04:01,278 p=25437 u=abheetha |  192.168.122.42 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2017-10-07 11:04:23,084 p=25471 u=abheetha |  192.168.122.42 | FAILED | rc=4 >>
+Unit httpd.service could not be found.
+
+2017-10-07 11:04:39,833 p=25497 u=abheetha |   [WARNING]: Consider using yum module rather than running yum
+
+2017-10-07 11:04:39,834 p=25497 u=abheetha |  192.168.122.42 | SUCCESS | rc=0 >>
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: centosx4.centos.org
+ * epel: ftp.riken.jp
+ * extras: centosx4.centos.org
+ * updates: centosx4.centos.org
+repo id               repo name                                           status
+base/7/x86_64         CentOS-7 - Base                                      9,363
+epel/x86_64           Extra Packages for Enterprise Linux 7 - x86_64      11,855
+extras/7/x86_64       CentOS-7 - Extras                                      383
+updates/7/x86_64      CentOS-7 - Updates                                   1,885
+repolist: 23,486
+
+2017-10-07 11:04:51,438 p=25530 u=abheetha |  192.168.122.42 | SUCCESS | rc=0 >>
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/cl-root  7.1G  3.4G  3.8G  48% /
+devtmpfs             481M     0  481M   0% /dev
+tmpfs                497M   84K  497M   1% /dev/shm
+tmpfs                497M  7.2M  490M   2% /run
+tmpfs                497M     0  497M   0% /sys/fs/cgroup
+/dev/vda1           1014M  173M  842M  17% /boot
+tmpfs                100M   24K  100M   1% /run/user/42
+tmpfs                100M     0  100M   0% /run/user/0
+tmpfs                100M     0  100M   0% /run/user/1001
+
+2017-10-07 11:39:25,736 p=26917 u=abheetha |  playbook: playbook.yml
+2017-10-07 11:39:32,871 p=26928 u=abheetha |  PLAY [Configure LAMP in Linux Server] ****************************************************************************************************************
+2017-10-07 11:39:33,363 p=26928 u=abheetha |  TASK [Gathering Facts] *******************************************************************************************************************************
+2017-10-07 11:39:37,116 p=26928 u=abheetha |  ok: [192.168.122.42]
+2017-10-07 11:39:37,121 p=26928 u=abheetha |  TASK [Install Epel Repo] *****************************************************************************************************************************
+2017-10-07 11:40:17,341 p=26928 u=abheetha |  fatal: [192.168.122.42]: FAILED! => {"changed": false, "failed": true, "msg": "Failure talking to yum: failure: repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz from epel: [Errno 256] No more mirrors to try.\nhttps://epel.mirror.angkasa.id/pub/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] curl#60 - \"Peer's Certificate has expired.\"\nhttp://mirror.vinahost.vn/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://ftp.riken.jp/Linux/fedora/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://ftp.jaist.ac.jp/pub/Linux/Fedora/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://mirror01.idc.hinet.net/EPEL/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://mirror.rise.ph/fedora-epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://kartolo.sby.datautama.net.id/EPEL/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://repo.ugm.ac.id/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttps://mirror.pregi.net/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] curl#60 - \"Peer's Certificate has expired.\"\nhttp://ftp.cuhk.edu.hk/pub/linux/fedora-epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://epel.scopesky.iq/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttp://mirror.premi.st/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found\nhttps://mirrors.tuna.tsinghua.edu.cn/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTPS Error 404 - Not Found\nhttps://mirrors.ustc.edu.cn/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTPS Error 404 - Not Found\nhttp://ae.mirror.rasanegar.com/fedoraproject/pub/epel/7/x86_64/repodata/6168c71bdaed15980813e73843123eb690df2888d9f01c5ed63b5de81acabffb-filelists.sqlite.xz: [Errno 14] HTTP Error 404 - Not Found"}
+2017-10-07 11:40:17,392 p=26928 u=abheetha |  	to retry, use: --limit @/home/abheetha/Ansible/LAMP/playbook.retry
+
+2017-10-07 11:40:17,392 p=26928 u=abheetha |  PLAY RECAP *******************************************************************************************************************************************
+2017-10-07 11:40:17,393 p=26928 u=abheetha |  192.168.122.42             : ok=1    changed=0    unreachable=0    failed=1   
+2017-10-07 11:42:13,012 p=27187 u=abheetha |  PLAY [Configure LAMP in Linux Server] ****************************************************************************************************************
+2017-10-07 11:42:13,532 p=27187 u=abheetha |  TASK [Gathering Facts] *******************************************************************************************************************************
+2017-10-07 11:42:16,840 p=27187 u=abheetha |  ok: [192.168.122.42]
+2017-10-07 11:42:16,846 p=27187 u=abheetha |  TASK [Install Epel Repo] *****************************************************************************************************************************
+2017-10-07 11:42:20,593 p=27187 u=abheetha |  changed: [192.168.122.42]
+2017-10-07 11:42:20,596 p=27187 u=abheetha |  PLAY RECAP *******************************************************************************************************************************************
+2017-10-07 11:42:20,596 p=27187 u=abheetha |  192.168.122.42             : ok=2    changed=1    unreachable=0    failed=0   
+2017-10-07 11:46:34,264 p=27598 u=abheetha |  PLAY [Configure LAMP in Linux Server] ****************************************************************************************************************
+2017-10-07 11:46:34,865 p=27598 u=abheetha |  TASK [Gathering Facts] *******************************************************************************************************************************
+2017-10-07 11:46:36,557 p=27598 u=abheetha |  ok: [192.168.122.42]
+2017-10-07 11:46:36,561 p=27598 u=abheetha |  TASK [Install Epel Repo] *****************************************************************************************************************************
+2017-10-07 11:46:40,333 p=27598 u=abheetha |  changed: [192.168.122.42]
+2017-10-07 11:46:40,335 p=27598 u=abheetha |  PLAY RECAP *******************************************************************************************************************************************
+2017-10-07 11:46:40,335 p=27598 u=abheetha |  192.168.122.42             : ok=2    changed=1    unreachable=0    failed=0   
+2017-10-07 11:48:20,160 p=27692 u=abheetha |  ERROR! Syntax Error while loading YAML.
+
+
+The error appears to have been in '/home/abheetha/Ansible/LAMP/playbook.yml': line 16, column 12, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      with_items:
+        - {{web_pkg}}
+           ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes.  Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2017-10-07 11:49:04,817 p=27719 u=abheetha |  PLAY [Configure LAMP in Linux Server] ****************************************************************************************************************
+2017-10-07 11:49:04,841 p=27719 u=abheetha |  TASK [Gathering Facts] *******************************************************************************************************************************
+2017-10-07 11:49:05,859 p=27719 u=abheetha |  ok: [192.168.122.42]
+2017-10-07 11:49:05,864 p=27719 u=abheetha |  TASK [Install Epel Repo] *****************************************************************************************************************************
+2017-10-07 11:49:09,069 p=27719 u=abheetha |  changed: [192.168.122.42]
+2017-10-07 11:49:09,072 p=27719 u=abheetha |  TASK [Install Web Packages] **************************************************************************************************************************
+2017-10-07 11:49:16,176 p=27719 u=abheetha |  changed: [192.168.122.42] => (item=[u'httpd.x86_64', u'httpd-devel.x86_64', u'mod_ssl.x86_64'])
+2017-10-07 11:49:16,177 p=27719 u=abheetha |  PLAY RECAP *******************************************************************************************************************************************
+2017-10-07 11:49:16,178 p=27719 u=abheetha |  192.168.122.42             : ok=3    changed=2    unreachable=0    failed=0   
+2017-10-07 11:52:32,857 p=27924 u=abheetha |  PLAY [Configure LAMP in Linux Server] ****************************************************************************************************************
+2017-10-07 11:52:33,348 p=27924 u=abheetha |  TASK [Gathering Facts] *******************************************************************************************************************************
+2017-10-07 11:52:34,960 p=27924 u=abheetha |  ok: [192.168.122.42]
+2017-10-07 11:52:34,964 p=27924 u=abheetha |  TASK [Install Epel Repo] *****************************************************************************************************************************
+2017-10-07 11:52:38,836 p=27924 u=abheetha |  changed: [192.168.122.42]
+2017-10-07 11:52:38,840 p=27924 u=abheetha |  TASK [Install Web Packages] **************************************************************************************************************************
+2017-10-07 11:52:51,681 p=27924 u=abheetha |  changed: [192.168.122.42] => (item=[u'httpd.x86_64', u'httpd-devel.x86_64', u'mod_ssl.x86_64'])
+2017-10-07 11:52:51,686 p=27924 u=abheetha |  TASK [Install Database Packages] *********************************************************************************************************************
+2017-10-07 11:52:56,684 p=27924 u=abheetha |  changed: [192.168.122.42] => (item=[u'mariadb-server.x86_64', u'mariadb-devel.x86_64'])
+2017-10-07 11:52:56,686 p=27924 u=abheetha |  PLAY RECAP *******************************************************************************************************************************************
+2017-10-07 11:52:56,686 p=27924 u=abheetha |  192.168.122.42             : ok=4    changed=3    unreachable=0    failed=0   

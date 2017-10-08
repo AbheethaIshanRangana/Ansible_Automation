@@ -1,0 +1,17 @@
+---
+
+epel_url: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+web_pkg:
+  - httpd.x86_64
+  - httpd-devel.x86_64
+  - mod_ssl.x86_64
+
+db_pkg:
+  - mariadb-server.x86_64
+  - mariadb-devel.x86_64
+
+php_pkg:
+  - 
+
+...

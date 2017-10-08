@@ -1,0 +1,23 @@
+---
+- name: Configure LAMP in Linux Server
+  hosts: webserver
+  vars:
+    http_port: 80
+    https_port: 443
+  vars_files:
+    - vars/services.yml
+    - vars/packages.yml
+  tasks:
+    - name: Install Epel Repo
+      yum: name={{epel_url}} state=present
+    - name: Install Web Packages
+      yum: name={{item}} state=latest
+      with_items:
+        - "{{web_pkg}}"
+    - name: Install Database Packages
+      yum: name={{item}} state=latest
+      with_items:
+        - "{{db_pkg}}"
+    - name: Install PHP Packages
+
+...
